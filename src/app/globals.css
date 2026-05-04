@@ -1,58 +1,60 @@
-:root {
-  --bg-color: #ffffff;
-  --text-main: #111111;
-  --text-muted: #555555;
-  --accent-color: #d32f2f; /* Deep red */
-  --border-color: #eeeeee;
+@import "tailwindcss";
+
+@theme {
+  --color-accent: #dc2626; /* A rich, appetizing crimson */
+  --color-main: #0f172a;   /* Slate 900 for high-contrast readability */
+  --color-muted: #64748b;  /* Slate 500 for secondary text */
+  --color-surface: #f8fafc; /* Slate 50 for the page background */
   
+  /* Elegant, subtle rounding for a premium app feel */
+  --radius-sm: 0.5rem;   /* 8px */
+  --radius-md: 0.75rem;  /* 12px */
+  --radius-lg: 1rem;     /* 16px */
+  --radius-full: 9999px;
+  
+  /* Beautiful, soft, floating shadows */
+  --shadow-elegant: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+  --shadow-elegant-hover: 0 12px 30px -4px rgba(0, 0, 0, 0.08);
+  --shadow-glass: 0 4px 30px rgba(0, 0, 0, 0.03);
+  
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-heading: var(--font-outfit), sans-serif;
-  --font-body: var(--font-inter), sans-serif;
 }
 
-*, *::before, *::after {
-  box-sizing: border-box;
+@layer base {
+  body {
+    background-color: var(--color-surface);
+    color: var(--color-main);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+  }
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  background-color: var(--bg-color);
-  color: var(--text-main);
-  font-family: var(--font-body);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
+@layer components {
+  .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-  font-weight: 700;
-  line-height: 1.2;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-p {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-/* Compact Container - 1200px */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-/* Animations */
-.animate-fade-in {
-  animation: fadeIn 0.5s ease-out forwards;
+@utility animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes fadeIn {

@@ -1,10 +1,17 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinks = [
     { name: "Home", href: "#" },
@@ -13,40 +20,29 @@ export default function Header() {
   ];
 
   return (
-    <header style={{
-      padding: '1.5rem 0',
-      borderBottom: '1px solid #e2e8f0',
-      background: '#ffffff',
-      position: 'relative',
-      zIndex: 1000
-    }}>
-      <div className="container" style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center'
-      }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-          <img src="/icon.png" alt="Wok & Spice Logo" style={{ width: '40px', height: '40px', objectFit: 'contain' }} />
-          <h1 style={{ 
-            margin: 0, 
-            fontSize: '1.25rem', 
-            color: 'var(--text-main)',
-            fontFamily: 'var(--font-heading)',
-            fontWeight: '800',
-            letterSpacing: '1px',
-            textTransform: 'uppercase'
-          }}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isScrolled 
+        ? "bg-white/90 backdrop-blur-md shadow-glass py-3 border-b border-slate-100" 
+        : "bg-white/80 backdrop-blur-sm py-5 border-transparent"
+    }`}>
+      <div className="container flex justify-between items-center">
+        {/* Brand */}
+        <a href="#" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+          <div className="w-10 h-10 bg-accent rounded-xl flex items-center justify-center shadow-sm">
+            <img src="/icon.png" alt="Logo" className="w-6 h-6 object-contain invert" />
+          </div>
+          <h1 className="text-xl font-extrabold text-slate-900 tracking-tight">
             Wok & Spice
           </h1>
-        </div>
+        </a>
         
         {/* Desktop Nav */}
-        <nav className="header-nav" style={{ display: 'flex', gap: '2rem' }}>
+        <nav className="hidden md:flex items-center gap-8 bg-slate-50 px-6 py-2.5 rounded-full border border-slate-100">
           {navLinks.map(link => (
             <a 
               key={link.name}
               href={link.href} 
-              style={{ color: 'var(--text-muted)', fontWeight: '600', textDecoration: 'none', textTransform: 'uppercase', fontSize: '0.9rem' }}
+              className="text-sm font-semibold text-slate-600 hover:text-accent transition-colors"
             >
               {link.name}
             </a>
@@ -55,45 +51,39 @@ export default function Header() {
 
         {/* Mobile Hamburger Button */}
         <button 
-          className="mobile-menu-toggle"
-          onClick={toggleMenu}
-          aria-label="Toggle Menu"
-          style={{
-            display: 'none',
-            background: 'none',
-            border: 'none',
-            fontSize: '1.75rem',
-            cursor: 'pointer',
-            padding: '0.5rem',
-            color: 'var(--text-main)'
-          }}
+          className="md:hidden w-11 h-11 flex items-center justify-center bg-slate-50 rounded-xl text-slate-900 border border-slate-100 shadow-sm active:scale-95 transition-all"
+          onClick={() => setIsMenuOpen(true)}
+          aria-label="Open Menu"
         >
-          ☰
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
         </button>
       </div>
 
       {/* Off-canvas Mobile Menu */}
-      <div className={`off-canvas-menu ${isMenuOpen ? 'open' : ''}`}>
-        <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '1.5rem' }}>
+      <div className={`fixed inset-y-0 right-0 w-full max-w-sm bg-white shadow-2xl z-[2000] flex flex-col transition-transform duration-400 ease-out transform ${
+        isMenuOpen ? "translate-x-0" : "translate-x-full"
+      }`}>
+        <div className="flex justify-between items-center p-6 border-b border-slate-100">
+          <h2 className="text-xl font-bold text-slate-900">Navigation</h2>
           <button 
             onClick={() => setIsMenuOpen(false)}
-            style={{ background: 'none', border: 'none', fontSize: '2rem', cursor: 'pointer', color: 'var(--text-main)' }}
+            className="w-10 h-10 flex items-center justify-center bg-slate-50 rounded-full text-slate-500 hover:bg-slate-100 transition-colors"
           >
-            ✕
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
           </button>
         </div>
         
-        <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-          <img src="/icon.png" alt="Logo" style={{ width: '60px', height: '60px', marginBottom: '0.5rem' }} />
-          <h2 style={{ fontSize: '1.25rem', margin: 0, color: 'var(--text-main)', textTransform: 'uppercase', fontWeight: 800 }}>Wok & Spice</h2>
-        </div>
-
-        <nav className="mobile-nav">
+        <nav className="flex flex-col p-6 gap-2 overflow-y-auto">
           {navLinks.map(link => (
             <a 
               key={link.name}
               href={link.href} 
               onClick={() => setIsMenuOpen(false)}
+              className="text-xl font-bold text-slate-700 hover:text-accent p-4 hover:bg-slate-50 rounded-2xl transition-all"
             >
               {link.name}
             </a>
@@ -104,66 +94,10 @@ export default function Header() {
       {/* Overlay */}
       {isMenuOpen && (
         <div 
-          className="menu-overlay"
+          className="fixed inset-0 bg-slate-900/20 backdrop-blur-sm z-[1500] transition-opacity"
           onClick={() => setIsMenuOpen(false)}
         />
       )}
-
-      <style>{`
-        @media (max-width: 600px) {
-          header { padding: 0.75rem 0 !important; }
-          .header-nav { display: none !important; }
-          .mobile-menu-toggle { display: block !important; }
-        }
-
-        .off-canvas-menu {
-          position: fixed;
-          top: 0;
-          right: -300px;
-          width: 300px;
-          height: 100vh;
-          background: #ffffff;
-          box-shadow: -10px 0 30px rgba(0,0,0,0.15);
-          z-index: 2000;
-          transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          padding: 1.5rem 2rem;
-          display: flex;
-          flex-direction: column;
-        }
-
-        .off-canvas-menu.open {
-          right: 0;
-        }
-
-        .mobile-nav {
-          display: flex;
-          flex-direction: column;
-          gap: 1.25rem;
-        }
-
-        .mobile-nav a {
-          font-family: var(--font-heading);
-          font-size: 1.15rem;
-          font-weight: 800;
-          text-transform: uppercase;
-          text-decoration: none;
-          color: var(--text-main);
-          letter-spacing: 1px;
-          padding: 0.75rem 0;
-          border-bottom: 1px solid #f8f8f8;
-        }
-
-        .menu-overlay {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100vw;
-          height: 100vh;
-          background: rgba(0,0,0,0.3);
-          backdrop-filter: blur(2px);
-          z-index: 1500;
-        }
-      `}</style>
     </header>
   );
 }
