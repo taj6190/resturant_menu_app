@@ -126,7 +126,7 @@ export default function Home() {
       <main className="pt-20 md:pt-24">
 
         {/* HERO */}
-        <div className="max-w-6xl mx-auto px-4">
+        <div className="max-w-[1200px] mx-auto px-4 xl:px-0">
           <div className="relative overflow-hidden rounded-3xl h-[30vh] md:h-[40vh] shadow-sm bg-black">
 
             <img
@@ -151,8 +151,8 @@ export default function Home() {
         </div>
 
         {/* SEARCH */}
-        <div className="max-w-2xl mx-auto px-4 -mt-6 relative z-10">
-          <div className="bg-white shadow-md border border-slate-100 rounded-2xl flex items-center px-4 py-3">
+        <div className="max-w-[1200px] mx-auto px-4 xl:px-0 -mt-6 relative z-10">
+          <div className="max-w-[700px] mx-auto bg-white shadow-md border border-slate-100 rounded-2xl flex items-center px-4 py-3">
 
             <svg className="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -178,16 +178,16 @@ export default function Home() {
 
         {/* CATEGORY TABS */}
         {!searchQuery && (
-          <div className="sticky top-20 z-40 bg-slate-50/80 backdrop-blur-xl mt-6 border-b border-slate-100">
-            <div className="max-w-6xl mx-auto px-4 py-3 flex gap-2 overflow-x-auto scrollbar-hide">
+          <div className="sticky top-15 z-40 bg-slate-50/80 backdrop-blur-xl mt-6 border-b border-slate-100">
+            <div className="max-w-[1200px] mx-auto px-4 xl:px-0 py-3 flex justify-center gap-2 overflow-x-auto scrollbar-hide">
 
               {grouped.map((cat) => (
                 <button
                   key={cat.id}
                   onClick={() => scrollToCategory(cat.id)}
                   className={`px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition ${activeCategory === cat.id
-                      ? "bg-black text-white"
-                      : "bg-white text-slate-600 border border-slate-200 hover:bg-slate-100"
+                    ? "bg-black text-white"
+                    : "bg-white text-slate-600 border border-slate-200 hover:bg-slate-100"
                     }`}
                 >
                   {cat.name}
@@ -200,13 +200,13 @@ export default function Home() {
 
         {/* RESULTS */}
         {searchQuery && (
-          <div className="max-w-6xl mx-auto px-4 mt-6 text-sm text-slate-500">
+          <div className="max-w-[1200px] mx-auto px-4 xl:px-0 mt-6 text-sm text-slate-500">
             {filteredItems.length} results found
           </div>
         )}
 
         {/* MENU */}
-        <div className="max-w-6xl mx-auto px-4 mt-8 pb-24 space-y-12">
+        <div className="max-w-[1200px] mx-auto px-4 xl:px-0 mt-8 pb-24 space-y-12">
 
           {grouped.length > 0 ? (
             grouped.map((category) => (
