@@ -1,0 +1,464 @@
+{
+  "categories": [
+    {
+      "id": "set-meals",
+      "name": "Set Meals & Combos"
+    },
+    {
+      "id": "soups-appetizers",
+      "name": "Soups & Appetizers"
+    },
+    {
+      "id": "fried-rice",
+      "name": "Fried Rice"
+    },
+    {
+      "id": "noodles-chowmein",
+      "name": "Noodles & Chowmein"
+    },
+    {
+      "id": "chicken-beef",
+      "name": "Chicken & Beef Dishes"
+    },
+    {
+      "id": "seafood",
+      "name": "Seafood Dishes"
+    }
+  ],
+  "items": [
+    {
+      "id": "1",
+      "category": "soups-appetizers",
+      "name": "Thai Soup Thick",
+      "description": "Rich, creamy, and spicy Thai soup with chicken, prawns, and mushrooms. A classic favorite.",
+      "price": "৳ 320",
+      "original_price": "৳ 350",
+      "image": "https://loremflickr.com/600/400/food,meal,dish?lock=1",
+      "portion_size": "1:3",
+      "is_halal": true,
+      "dietary_tags": [
+        "Spicy",
+        "Seafood"
+      ],
+      "spicy_level": 2,
+      "is_popular": true,
+      "is_sold_out": false
+    },
+    {
+      "id": "2",
+      "category": "soups-appetizers",
+      "name": "Crispy Fried Wonton",
+      "description": "Golden fried wontons stuffed with minced chicken, served with our signature sweet and sour dipping sauce.",
+      "price": "৳ 220",
+      "image": "https://loremflickr.com/600/400/food,meal,dish?lock=2",
+      "portion_size": "6 Pcs",
+      "is_halal": true,
+      "dietary_tags": [
+        "Crispy"
+      ],
+      "spicy_level": 0,
+      "is_popular": false,
+      "is_sold_out": false
+    },
+    {
+      "id": "3",
+      "category": "soups-appetizers",
+      "name": "Chicken Corn Soup",
+      "description": "Comforting thick soup made with sweet corn kernels and minced chicken. Perfect for a cozy start.",
+      "price": "৳ 280",
+      "image": "https://loremflickr.com/600/400/food,meal,dish?lock=3",
+      "portion_size": "1:3",
+      "is_halal": true,
+      "dietary_tags": [
+        "Mild"
+      ],
+      "spicy_level": 0,
+      "is_popular": true,
+      "is_sold_out": false
+    },
+    {
+      "id": "4",
+      "category": "soups-appetizers",
+      "name": "Hot & Sour Soup",
+      "description": "A perfect balance of spicy and tangy flavors, packed with shredded chicken, tofu, and vegetables.",
+      "price": "৳ 300",
+      "image": "https://loremflickr.com/600/400/food,meal,dish?lock=4",
+      "portion_size": "1:3",
+      "is_halal": true,
+      "dietary_tags": [
+        "Spicy",
+        "Tangy"
+      ],
+      "spicy_level": 2,
+      "is_popular": false,
+      "is_sold_out": false
+    },
+    {
+      "id": "5",
+      "category": "soups-appetizers",
+      "name": "Chicken Spring Rolls",
+      "description": "Crispy pastry rolls filled with seasoned vegetables and minced chicken, deep-fried to perfection.",
+      "price": "৳ 180",
+      "image": "https://loremflickr.com/600/400/food,meal,dish?lock=5",
+      "portion_size": "4 Pcs",
+      "is_halal": true,
+      "dietary_tags": [
+        "Crispy"
+      ],
+      "spicy_level": 0,
+      "is_popular": true,
+      "is_sold_out": false
+    },
+    {
+      "id": "6",
+      "category": "soups-appetizers",
+      "name": "Fried Prawns",
+      "description": "Jumbo prawns coated in a light, crispy batter and deep-fried. Served with garlic mayo sauce.",
+      "price": "৳ 450",
+      "image": "https://loremflickr.com/600/400/food,meal,dish?lock=6",
+      "portion_size": "6 Pcs",
+      "is_halal": true,
+      "dietary_tags": [
+        "Seafood",
+        "Crispy"
+      ],
+      "spicy_level": 1,
+      "is_popular": true,
+      "is_sold_out": false
+    },
+    {
+      "id": "7",
+      "category": "soups-appetizers",
+      "name": "Prawn on Toast",
+      "description": "Minced prawn spread on crispy toast slices and deep-fried with sesame seeds.",
+      "price": "৳ 320",
+      "image": "https://loremflickr.com/600/400/food,meal,dish?lock=7",
+      "portion_size": "4 Pcs",
+      "is_halal": true,
+      "dietary_tags": [
+        "Seafood"
+      ],
+      "spicy_level": 1,
+      "is_popular": false,
+      "is_sold_out": false
+    },
+    {
+      "id": "8",
+      "category": "fried-rice",
+      "name": "Mixed Fried Rice",
+      "description": "Authentic wok-tossed fried rice with chicken, beef, prawns, eggs, and fresh seasonal vegetables.",
+      "price": "৳ 350",
+      "original_price": "৳ 400",
+      "image": "https://loremflickr.com/600/400/food,meal,dish?lock=8",
+      "portion_size": "1:3",
+      "is_halal": true,
+      "dietary_tags": [
+        "Mixed Meat"
+      ],
+      "spicy_level": 1,
+      "is_popular": true,
+      "is_sold_out": false
+    },
+    {
+      "id": "9",
+      "category": "fried-rice",
+      "name": "Chicken Fried Rice",
+      "description": "Classic Chinese-style fried rice loaded with tender chicken pieces, scrambled egg, and green onions.",
+      "price": "৳ 320",
+      "image": "https://loremflickr.com/600/400/food,meal,dish?lock=9",
+      "portion_size": "1:3",
+      "is_halal": true,
+      "dietary_tags": [],
+      "spicy_level": 0,
+      "is_popular": true,
+      "is_sold_out": false
+    },
+    {
+      "id": "10",
+      "category": "fried-rice",
+      "name": "Szechuan Fried Rice",
+      "description": "Spicy, aromatic fried rice tossed with Szechuan sauce, chicken, and colorful bell peppers.",
+      "price": "৳ 380",
+      "image": "https://loremflickr.com/600/400/food,meal,dish?lock=10",
+      "portion_size": "1:3",
+      "is_halal": true,
+      "dietary_tags": [
+        "Spicy"
+      ],
+      "spicy_level": 3,
+      "is_popular": false,
+      "is_sold_out": false
+    },
+    {
+      "id": "11",
+      "category": "fried-rice",
+      "name": "Beef Fried Rice",
+      "description": "Wok-fried rice with savory minced beef, soy sauce, garlic, and fresh vegetables.",
+      "price": "৳ 360",
+      "image": "https://loremflickr.com/600/400/food,meal,dish?lock=11",
+      "portion_size": "1:3",
+      "is_halal": true,
+      "dietary_tags": [],
+      "spicy_level": 1,
+      "is_popular": false,
+      "is_sold_out": false
+    },
+    {
+      "id": "12",
+      "category": "fried-rice",
+      "name": "Egg & Garlic Fried Rice",
+      "description": "A fragrant, simple, and comforting fried rice tossed with roasted garlic and double egg.",
+      "price": "৳ 250",
+      "image": "https://loremflickr.com/600/400/food,meal,dish?lock=12",
+      "portion_size": "1:3",
+      "is_halal": true,
+      "dietary_tags": [
+        "Vegetarian"
+      ],
+      "spicy_level": 0,
+      "is_popular": true,
+      "is_sold_out": false
+    },
+    {
+      "id": "13",
+      "category": "noodles-chowmein",
+      "name": "Mixed Chowmein",
+      "description": "Stir-fried noodles loaded with chicken, beef, prawns, julienned vegetables, and soy sauce.",
+      "price": "৳ 380",
+      "image": "https://loremflickr.com/600/400/food,meal,dish?lock=13",
+      "portion_size": "1:3",
+      "is_halal": true,
+      "dietary_tags": [
+        "Mixed Meat"
+      ],
+      "spicy_level": 1,
+      "is_popular": true,
+      "is_sold_out": false
+    },
+    {
+      "id": "14",
+      "category": "noodles-chowmein",
+      "name": "Chicken Hakka Noodles",
+      "description": "Thin noodles stir-fried hakka style with shredded chicken, cabbage, carrots, and green chilies.",
+      "price": "৳ 320",
+      "image": "https://loremflickr.com/600/400/food,meal,dish?lock=14",
+      "portion_size": "1:3",
+      "is_halal": true,
+      "dietary_tags": [],
+      "spicy_level": 2,
+      "is_popular": false,
+      "is_sold_out": false
+    },
+    {
+      "id": "15",
+      "category": "noodles-chowmein",
+      "name": "Spicy Szechuan Noodles",
+      "description": "Noodles tossed in a fiery Szechuan pepper sauce with chicken and red bell peppers.",
+      "price": "৳ 350",
+      "image": "https://loremflickr.com/600/400/food,meal,dish?lock=15",
+      "portion_size": "1:3",
+      "is_halal": true,
+      "dietary_tags": [
+        "Extra Spicy"
+      ],
+      "spicy_level": 4,
+      "is_popular": false,
+      "is_sold_out": false
+    },
+    {
+      "id": "16",
+      "category": "chicken-beef",
+      "name": "Sizzling Chili Chicken",
+      "description": "Tender boneless chicken pieces cooked with green chilies, onions, and capsicum in a savory dark soy gravy. Served sizzling hot.",
+      "price": "৳ 450",
+      "image": "https://loremflickr.com/600/400/food,meal,dish?lock=16",
+      "portion_size": "1:3",
+      "is_halal": true,
+      "dietary_tags": [
+        "Spicy",
+        "High Protein"
+      ],
+      "spicy_level": 3,
+      "is_popular": true,
+      "is_sold_out": false
+    },
+    {
+      "id": "17",
+      "category": "chicken-beef",
+      "name": "Sweet & Sour Chicken",
+      "description": "Crispy battered chicken chunks tossed in our signature tangy sweet and sour sauce with pineapple and peppers.",
+      "price": "৳ 420",
+      "image": "https://loremflickr.com/600/400/food,meal,dish?lock=17",
+      "portion_size": "1:3",
+      "is_halal": true,
+      "dietary_tags": [
+        "Sweet"
+      ],
+      "spicy_level": 0,
+      "is_popular": true,
+      "is_sold_out": false
+    },
+    {
+      "id": "18",
+      "category": "chicken-beef",
+      "name": "Chicken with Cashew Nuts",
+      "description": "Stir-fried chicken breast chunks cooked with roasted cashew nuts, dried chilies, and vegetables.",
+      "price": "৳ 480",
+      "image": "https://loremflickr.com/600/400/food,meal,dish?lock=18",
+      "portion_size": "1:3",
+      "is_halal": true,
+      "dietary_tags": [
+        "Contains Nuts"
+      ],
+      "spicy_level": 1,
+      "is_popular": false,
+      "is_sold_out": false
+    },
+    {
+      "id": "19",
+      "category": "chicken-beef",
+      "name": "Beef Sizzling",
+      "description": "Stir-fried tender beef strips served on a hot iron plate with a rich, savory brown sauce and vegetables.",
+      "price": "৳ 550",
+      "image": "https://loremflickr.com/600/400/food,meal,dish?lock=19",
+      "portion_size": "1:3",
+      "is_halal": true,
+      "dietary_tags": [
+        "High Protein"
+      ],
+      "spicy_level": 2,
+      "is_popular": true,
+      "is_sold_out": false
+    },
+    {
+      "id": "20",
+      "category": "chicken-beef",
+      "name": "Beef in Oyster Sauce",
+      "description": "Sliced beef wok-fried with broccoli and mushrooms in a thick, umami-rich oyster sauce.",
+      "price": "৳ 520",
+      "image": "https://loremflickr.com/600/400/food,meal,dish?lock=20",
+      "portion_size": "1:3",
+      "is_halal": true,
+      "dietary_tags": [],
+      "spicy_level": 1,
+      "is_popular": false,
+      "is_sold_out": false
+    },
+    {
+      "id": "21",
+      "category": "chicken-beef",
+      "name": "Beef with Basil Leaf",
+      "description": "Minced beef stir-fried with fresh basil leaves, fiery bird's eye chilies, and garlic.",
+      "price": "৳ 480",
+      "image": "https://loremflickr.com/600/400/food,meal,dish?lock=21",
+      "portion_size": "1:3",
+      "is_halal": true,
+      "dietary_tags": [
+        "Extra Spicy"
+      ],
+      "spicy_level": 4,
+      "is_popular": false,
+      "is_sold_out": false
+    },
+    {
+      "id": "22",
+      "category": "seafood",
+      "name": "Sizzling Prawns",
+      "description": "Large prawns tossed in a buttery garlic sauce and served sizzling hot with onions and peppers.",
+      "price": "৳ 650",
+      "image": "https://loremflickr.com/600/400/food,meal,dish?lock=22",
+      "portion_size": "1:3",
+      "is_halal": true,
+      "dietary_tags": [
+        "Seafood"
+      ],
+      "spicy_level": 2,
+      "is_popular": true,
+      "is_sold_out": false
+    },
+    {
+      "id": "23",
+      "category": "seafood",
+      "name": "Sweet & Sour Prawns",
+      "description": "Crispy fried prawns coated in our sweet and tangy red sauce with chunks of pineapple.",
+      "price": "৳ 580",
+      "image": "https://loremflickr.com/600/400/food,meal,dish?lock=23",
+      "portion_size": "1:3",
+      "is_halal": true,
+      "dietary_tags": [
+        "Seafood",
+        "Sweet"
+      ],
+      "spicy_level": 0,
+      "is_popular": false,
+      "is_sold_out": false
+    },
+    {
+      "id": "24",
+      "category": "seafood",
+      "name": "Garlic Butter Fish",
+      "description": "Pan-fried fish fillets smothered in a rich garlic butter sauce with fresh coriander.",
+      "price": "৳ 450",
+      "image": "https://loremflickr.com/600/400/food,meal,dish?lock=24",
+      "portion_size": "1:3",
+      "is_halal": true,
+      "dietary_tags": [
+        "Seafood"
+      ],
+      "spicy_level": 1,
+      "is_popular": true,
+      "is_sold_out": false
+    },
+    {
+      "id": "25",
+      "category": "set-meals",
+      "name": "Set Meal 1 (Student Combo)",
+      "description": "Egg Fried Rice, 2 pcs Crispy Fried Chicken, and Chinese Vegetables.",
+      "price": "৳ 250",
+      "image": "https://loremflickr.com/600/400/food,meal,dish?lock=25",
+      "portion_size": "1 Person",
+      "is_halal": true,
+      "dietary_tags": [
+        "Value Meal"
+      ],
+      "spicy_level": 0,
+      "is_popular": true,
+      "is_sold_out": false
+    },
+    {
+      "id": "26",
+      "category": "set-meals",
+      "name": "Set Meal 2 (Classic Combo)",
+      "description": "Mixed Fried Rice, Sizzling Chili Chicken, and 2 pcs Fried Wonton.",
+      "price": "৳ 320",
+      "original_price": "৳ 380",
+      "image": "https://loremflickr.com/600/400/food,meal,dish?lock=26",
+      "portion_size": "1 Person",
+      "is_halal": true,
+      "dietary_tags": [
+        "Popular Choice"
+      ],
+      "spicy_level": 2,
+      "is_popular": true,
+      "is_sold_out": false
+    },
+    {
+      "id": "27",
+      "category": "set-meals",
+      "name": "Set Meal 3 (Premium Couple Platter)",
+      "description": "Large Szechuan Fried Rice, Beef with Basil, Garlic Prawns, and 2 portions of Hot & Sour Soup.",
+      "price": "৳ 999",
+      "original_price": "৳ 1200",
+      "image": "https://loremflickr.com/600/400/food,meal,dish?lock=27",
+      "portion_size": "2 Persons",
+      "is_halal": true,
+      "dietary_tags": [
+        "Spicy",
+        "Chef's Special"
+      ],
+      "spicy_level": 3,
+      "is_popular": false,
+      "is_sold_out": false
+    }
+  ]
+}
