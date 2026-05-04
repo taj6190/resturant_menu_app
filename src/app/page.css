@@ -414,92 +414,98 @@ footer {
 /* Mobile adjustments - HIGHLY OPTIMIZED FOR PHONES */
 @media (max-width: 600px) {
   .hero {
-    padding: 4rem 0;
-    margin-bottom: 2rem;
+    padding: 3rem 0; /* even more compact */
+    margin-bottom: 1.5rem;
   }
   .hero h1 {
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
+    font-size: 1.75rem; /* smaller but bolder */
+    margin-bottom: 0.75rem;
   }
   .hero p {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.4;
   }
   
   .about-section {
-    padding: 1rem 0 3rem;
+    padding: 1.5rem 0;
+    margin-bottom: 1rem;
+  }
+  .about-content h2 {
+    font-size: 1.75rem;
   }
   .about-image img {
-    height: 250px;
+    height: 220px;
+    box-shadow: -10px 10px 0px 0px var(--border-color);
   }
   
   .menu-header {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
   .menu-header h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
   }
 
   .menu-container {
-    padding: 1rem 0 3rem;
+    padding: 1.5rem 0;
   }
 
   .category-section {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
   .category-section h2 {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
+    font-size: 1.15rem;
+    padding: 0.4rem 0.75rem;
+    margin-bottom: 0.75rem;
   }
 
   .items-grid {
-    gap: 0.5rem; /* Ultra tight gap for phone grids */
+    gap: 0.6rem; /* perfectly balanced gap for 2 columns */
   }
 
   /* Vertical cards for 2-column mobile grid */
   .menu-item-card {
     flex-direction: column; 
     height: auto; 
+    border-width: 1px;
   }
   
   .item-image-wrapper {
     width: 100%; 
     min-width: 100%;
-    height: 120px;
+    height: 110px; /* shorter image to fit more grid items */
     border-right: none;
     border-bottom: 1px solid var(--border-color);
   }
   
   .item-content {
     padding: 0.5rem;
-    justify-content: flex-start; 
+    gap: 0.15rem;
   }
   
   .item-header {
     flex-direction: column;
-    gap: 0.25rem;
-    margin-bottom: 0.5rem;
+    gap: 0.1rem;
+    margin-bottom: 0.25rem;
   }
   
   .item-name {
-    font-size: 0.85rem;
-    line-height: 1.2;
+    font-size: 0.8rem;
+    font-weight: 800;
   }
   
   .item-price {
     font-size: 0.85rem;
+    font-weight: 900;
   }
   
   .item-original-price {
-    font-size: 0.7rem !important;
+    font-size: 0.65rem !important;
   }
   
   .item-description {
-    font-size: 0.7rem;
-    -webkit-line-clamp: 2; /* 2 lines for vertical cards */
-    margin-bottom: 0.5rem;
-    display: none; /* Hide description completely on mobile to keep grid clean */
+    display: none; 
   }
   
   .item-meta {
@@ -507,7 +513,7 @@ footer {
   }
 
   .badge {
-    font-size: 0.5rem;
-    padding: 0.15rem 0.3rem;
+    font-size: 0.45rem;
+    padding: 0.1rem 0.25rem;
   }
 }
