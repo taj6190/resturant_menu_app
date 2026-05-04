@@ -16,7 +16,7 @@ export default function MenuCategory({ category }) {
         </h2>
         <div className="h-[2px] bg-slate-100 w-full rounded-full" />
       </div>
-      
+
       {/* 
           Grid Config (Beautiful & Compact):
           Mobile: 2 columns, gap 3 (approx 12px) for high density but enough breathing room.

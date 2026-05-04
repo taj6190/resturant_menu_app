@@ -6,98 +6,110 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
     { name: "Home", href: "#" },
-    { name: "About Us", href: "#about" },
+    { name: "About", href: "#about" },
     { name: "Menu", href: "#menu" },
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled 
-        ? "bg-white/90 backdrop-blur-md shadow-glass py-3 border-b border-slate-100" 
-        : "bg-white/80 backdrop-blur-sm py-5 border-transparent"
-    }`}>
-      <div className="container flex justify-between items-center">
-        {/* Brand */}
-        <a href="#" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-          <div className="w-10 h-10 bg-accent rounded-xl flex items-center justify-center shadow-sm">
-            <img src="/icon.png" alt="Logo" className="w-6 h-6 object-contain invert" />
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${isScrolled
+            ? "bg-white/80 backdrop-blur-xl border-slate-200 shadow-sm"
+            : "bg-white/50 backdrop-blur-md border-transparent"
+          }`}
+      >
+        <div className="max-w-7xl mx-auto px-5 h-16 flex items-center justify-between">
+
+          {/* Logo */}
+          <a href="#" className="flex items-center gap-3">
+            <div className="w-9 h-9 rounded-xl bg-black flex items-center justify-center shadow-sm">
+              <img src="/icon.png" className="w-5 h-5 invert" />
+            </div>
+            <span className="font-bold text-slate-900 tracking-tight">
+              Wok & Spice
+            </span>
+          </a>
+
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-sm font-medium text-slate-600 hover:text-black transition"
+              >
+                {link.name}
+              </a>
+            ))}
+          </nav>
+
+          {/* CTA */}
+          <div className="hidden md:flex items-center gap-3">
+            <button className="px-4 py-2 text-sm font-semibold rounded-full bg-black text-white hover:opacity-90 transition">
+              Reserve
+            </button>
           </div>
-          <h1 className="text-xl font-extrabold text-slate-900 tracking-tight">
-            Wok & Spice
-          </h1>
-        </a>
-        
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8 bg-slate-50 px-6 py-2.5 rounded-full border border-slate-100">
-          {navLinks.map(link => (
-            <a 
-              key={link.name}
-              href={link.href} 
-              className="text-sm font-semibold text-slate-600 hover:text-accent transition-colors"
-            >
-              {link.name}
-            </a>
-          ))}
-        </nav>
 
-        {/* Mobile Hamburger Button */}
-        <button 
-          className="md:hidden w-11 h-11 flex items-center justify-center bg-slate-50 rounded-xl text-slate-900 border border-slate-100 shadow-sm active:scale-95 transition-all"
-          onClick={() => setIsMenuOpen(true)}
-          aria-label="Open Menu"
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
-
-      {/* Off-canvas Mobile Menu */}
-      <div className={`fixed inset-y-0 right-0 w-full max-w-sm bg-white shadow-2xl z-[2000] flex flex-col transition-transform duration-400 ease-out transform ${
-        isMenuOpen ? "translate-x-0" : "translate-x-full"
-      }`}>
-        <div className="flex justify-between items-center p-6 border-b border-slate-100">
-          <h2 className="text-xl font-bold text-slate-900">Navigation</h2>
-          <button 
-            onClick={() => setIsMenuOpen(false)}
-            className="w-10 h-10 flex items-center justify-center bg-slate-50 rounded-full text-slate-500 hover:bg-slate-100 transition-colors"
+          {/* Mobile Button */}
+          <button
+            onClick={() => setIsMenuOpen(true)}
+            className="md:hidden w-10 h-10 flex items-center justify-center rounded-xl border border-slate-200 bg-white shadow-sm active:scale-95"
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
         </div>
-        
-        <nav className="flex flex-col p-6 gap-2 overflow-y-auto">
-          {navLinks.map(link => (
-            <a 
+      </header>
+
+      {/* Overlay */}
+      <div
+        onClick={() => setIsMenuOpen(false)}
+        className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-40 transition-opacity ${isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+          }`}
+      />
+
+      {/* Mobile Drawer */}
+      <aside
+        className={`fixed top-0 right-0 h-full w-[85%] max-w-sm bg-white z-50 shadow-2xl transition-transform duration-300 ${isMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+      >
+        <div className="flex items-center justify-between p-5 border-b">
+          <span className="font-semibold">Menu</span>
+          <button
+            onClick={() => setIsMenuOpen(false)}
+            className="w-9 h-9 rounded-full border flex items-center justify-center"
+          >
+            ✕
+          </button>
+        </div>
+
+        <nav className="p-5 flex flex-col gap-4">
+          {navLinks.map((link) => (
+            <a
               key={link.name}
-              href={link.href} 
+              href={link.href}
               onClick={() => setIsMenuOpen(false)}
-              className="text-xl font-bold text-slate-700 hover:text-accent p-4 hover:bg-slate-50 rounded-2xl transition-all"
+              className="text-lg font-semibold text-slate-700 hover:text-black"
             >
               {link.name}
             </a>
           ))}
         </nav>
-      </div>
 
-      {/* Overlay */}
-      {isMenuOpen && (
-        <div 
-          className="fixed inset-0 bg-slate-900/20 backdrop-blur-sm z-[1500] transition-opacity"
-          onClick={() => setIsMenuOpen(false)}
-        />
-      )}
-    </header>
+        <div className="absolute bottom-0 w-full p-5 border-t">
+          <button className="w-full py-3 rounded-xl bg-black text-white font-semibold">
+            Reserve Table
+          </button>
+        </div>
+      </aside>
+    </>
   );
 }
