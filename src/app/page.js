@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useRef } from "react";
 import menuData from "../data/menu.json";
 import MenuCategory from "../components/MenuCategory";
 import Header from "../components/Header";
@@ -7,6 +7,17 @@ import Header from "../components/Header";
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState("all");
+  const tabsRef = useRef(null);
+
+  // Auto-scroll tabs when active category changes
+  useEffect(() => {
+    if (tabsRef.current && activeCategory) {
+      const activeTab = tabsRef.current.querySelector(`[data-tab="${activeCategory}"]`);
+      if (activeTab) {
+        activeTab.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
+    }
+  }, [activeCategory]);
 
   const { categories, items } = menuData;
 
@@ -179,13 +190,14 @@ export default function Home() {
         {/* CATEGORY TABS */}
         {!searchQuery && (
           <div className="sticky top-15 z-40 bg-slate-50/80 backdrop-blur-xl mt-6 border-b border-slate-100">
-            <div className="max-w-[1200px] mx-auto px-4 xl:px-0 py-3 flex justify-center gap-2 overflow-x-auto scrollbar-hide">
+            <div ref={tabsRef} className="max-w-[1200px] mx-auto px-4 xl:px-0 py-3 flex md:justify-center gap-2 overflow-x-auto scrollbar-hide scroll-smooth">
 
               {grouped.map((cat) => (
                 <button
                   key={cat.id}
+                  data-tab={cat.id}
                   onClick={() => scrollToCategory(cat.id)}
-                  className={`px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition ${activeCategory === cat.id
+                  className={`shrink-0 px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition ${activeCategory === cat.id
                     ? "bg-black text-white"
                     : "bg-white text-slate-600 border border-slate-200 hover:bg-slate-100"
                     }`}
